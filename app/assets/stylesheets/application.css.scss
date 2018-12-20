@@ -17,18 +17,18 @@
   html, body {
     background: #F7F7F7;
   }
-  // Reset
+  /* Reset */
   @import 'base/reset';
 
-  // Libs
+  /* Libs */
   @import 'basement/src/index';
 
-  // Settings
+  /* Settings */
   @import 'base/breakpoints';
   @import 'base/colors';
   @import 'base/typography';
   @import 'base/utils';
 
-  // Components
+  /* Components */
   @import 'components/nav';
   @import 'components/splash';
