@@ -1,5 +1,10 @@
 {
   "name": "boxandchips_splash",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "^3.5.5",
+    "basscss": "^8.0.10",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
 }

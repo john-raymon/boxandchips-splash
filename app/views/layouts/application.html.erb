@@ -9,9 +9,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= render 'shared/nav' %>
+  <body class="flex clearfix">
+    <section class="col col-12 max-width-960 mx-auto">
+      <%= render 'shared/nav' %>
 
-    <%= yield %>
+      <%= yield %>
+    <section>
   </body>
 </html>
