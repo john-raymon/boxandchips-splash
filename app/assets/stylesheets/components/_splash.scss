@@ -4,5 +4,11 @@
     width: 29rem;
     bottom: 25%;
     height: auto;
+
+    &--mobile {
+      width: 100%;
+      bottom: 0;
+    }
   }
+
 }
