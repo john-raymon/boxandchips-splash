@@ -1,0 +1,54 @@
+$colors: (
+  'white': #fff,
+  'black': #000,
+  'black-wash': #404040,
+  'white-wash': rgba(255, 255, 255, 0.5),
+  'light-gray': #d3d3d3,
+  'gray': #b3b3b3,
+  'dark-gray': #222,
+  'light-blue': #4d66ff,
+  'blue': #3d51ff,
+  'dark-blue': #3046ce,
+  'orange': #ff4f2c,
+  'green': #3dffbc,
+  'red': #ff4f2c,
+  'transparent': transparent,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+@each $name, $color in $colors {
+  .text-#{$name} {
+    color: #{$color};
+  }
+
+  .bg-#{$name} {
+    background-color: #{$color};
+  }
+
+  .fill-#{$name} {
+    fill: #{$color};
+  }
+
+  .border-#{$name} {
+    border-color: #{$color};
+  }
+
+  .border-top-#{$name} {
+    border-top-color: #{$color};
+  }
+
+  .border-right-#{$name} {
+    border-right-color: #{$color};
+  }
+
+  .border-bottom-#{$name} {
+    border-bottom-color: #{$color};
+  }
+
+  .border-left-#{$name} {
+    border-left-color: #{$color};
+  }
+}

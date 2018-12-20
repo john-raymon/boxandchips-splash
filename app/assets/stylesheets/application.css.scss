@@ -15,8 +15,17 @@
  */
 
 
- // Reset
- @import 'base/reset';
+  // Reset
+  @import 'base/reset';
 
-// Libs
- @import 'basscss/basscss';
+  // Libs
+  @import 'basscss/basscss';
+
+  // Settings
+  @import 'base/colors';
+  @import 'base/typography';
+  @import 'base/utils';
+
+  // Components
+  @import 'components/nav';
+  @import 'components/splash';
