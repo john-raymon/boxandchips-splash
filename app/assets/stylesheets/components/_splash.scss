@@ -1,13 +1,40 @@
 .Splash {
 
   &__chip {
-    width: 29rem;
-    bottom: 25%;
     height: auto;
 
     &--mobile {
       width: 100%;
       bottom: 0;
+    }
+
+    @media screen and (min-width: 52rem) {
+      &--medium {
+        width: 23rem;
+        bottom: 25%;
+      }
+    }
+
+    @media screen and (min-width: 67rem) {
+      &--large {
+        width: 26rem;
+        bottom: 25%;
+      }
+    }
+  }
+
+  &__box-image {
+    width: 100%;
+    height: auto;
+
+    @media screen and (min-width: 40rem) {
+      width: 60%;
+      float: right;
+    }
+
+    @media screen and (min-width: 64rem) {
+      width: 28rem;
+      float: none;
     }
   }
 

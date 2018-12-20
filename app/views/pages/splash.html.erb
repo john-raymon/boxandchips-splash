@@ -1,32 +1,47 @@
 <div class="Splash__container py4 sm:mt4">
   <div class="Splash__hero clearfix lg:flex lg:flex-row items-center py2 w100">
     <div class="">
-      <p class="large-body-text text-black-wash">
+      <p class="large-body-text color-black-wash">
         tasty, delicious chips
         <br class="none sm:inline" />
         hand picked for you
         <br class="none sm:inline" />
         from all around the world
-        <span class="block sub-body-text text-yellow">
+        <span class="block sub-body-text color-yellow">
           learn more below
         </span>
       </p>
     </div>
 
     <div class="none col lg:block">
-      <div class="Splash__chip absolute">
+      <div class="Splash__chip--large Splash__chip--medium absolute">
         <%= render 'shared/svgs/chip' %>
       </div>
     </div>
 
     <div class="col col-12 sm:col-7 pt2 lg:none clearfix">
-      <div class="Splash__chip--mobile">
+      <div class="Splash__chip--medium Splash__chip--mobile">
         <%= render 'shared/svgs/chip' %>
       </div>
     </div>
 
   </div>
 
-  <div class="Splash__second-hero">
+  <div class="Splash__second-hero flex flex-col lg:flex-row mt8 justify-between">
+    <div class="lg:none">
+      <p class="Splash__second-hero__text relative large-body-text color-black-wash text-right mbn_2">
+        start monthly or get<br>a one-time box
+      </p>
+    </div>
+    <div class="lg:self-center">
+      <div class="Splash__box-image">
+        <%= render 'shared/svgs/box' %>
+      </div>
+    </div>
+    <div class="self-center none lg:flex">
+      <p class="Splash__second-hero__text flex large-body-text color-black-wash text-right">
+        start monthly or get<br>a one-time box
+      </p>
+    </div>
   </div>
 </div>
