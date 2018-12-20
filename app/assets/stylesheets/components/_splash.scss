@@ -33,7 +33,12 @@
     }
 
     @media screen and (min-width: 64rem) {
-      width: 28rem;
+      width: 24rem;
+      float: none;
+    }
+
+    @media screen and (min-width: 67rem) {
+      width: 27rem;
       float: none;
     }
   }
