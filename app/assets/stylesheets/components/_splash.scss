@@ -23,6 +23,12 @@
     }
   }
 
+  &__bag-wrapper {
+    height: 36px;
+    width: 32px;
+    transition: fill 0.50s ease-out;
+  }
+
   &__box-image {
     width: 100%;
     height: auto;
@@ -40,6 +46,20 @@
     @media screen and (min-width: 67rem) {
       width: 27rem;
       float: none;
+    }
+  }
+
+  &__subscribe-button {
+    transition: border-color 1.25s ease-out;
+
+    &:hover {
+      .Splash__bag-wrapper {
+        fill: color('light-gray');
+        transition: fill 1s ease-in;
+      }
+
+      border-color: color('yellow-wash');
+      transition: border-color 2s ease-out;
     }
   }
 

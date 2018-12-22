@@ -5,6 +5,7 @@ $colors: (
 'white-wash': rgba(255, 255, 255, 0.5),
 'light-gray': #d3d3d3,
 'gray': #b3b3b3,
+'yellow-wash': #e4c40438,
 'dark-gray': #222,
 'light-blue': #4d66ff,
 'blue': #3d51ff,
@@ -15,6 +16,10 @@ $colors: (
 'yellow': #E4C404,
 'transparent': transparent
 );
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
 
 @each $name, $color in $colors {
   .border-#{$name} {

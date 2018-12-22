@@ -24,11 +24,22 @@ $cool: 'Cool', sans-serif;
     letter-spacing: 1.1px;
     line-height: 72px;
   }
+}
+
+.caption {
+  font-size: 0.85rem;
+  line-height: 1rem;
+  font-family: $cool;
+
+  @media screen and (min-width: 40rem) {
+    font-size: 1rem;
+    line-height: 1.1rem;
+  }
 
 }
 
 .sub-body-text {
-  font-size: 1.75rem;
+  font-size: 1.50rem;
   line-height: 1.75rem;
   font-family: $cool;
 
