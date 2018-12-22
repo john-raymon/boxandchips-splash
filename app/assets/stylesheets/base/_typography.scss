@@ -15,9 +15,9 @@ $cool: 'Cool', sans-serif;
 
 .large-body-text {
   font-family: $cool;
-  font-size: 3.5rem;
+  font-size: 2.75rem;
   letter-spacing: 1.1px;
-  line-height: 3.50rem;
+  line-height: 2.65rem;
 
   @media screen and (min-width: 40rem) {
     font-size: 3.75rem;
@@ -28,7 +28,13 @@ $cool: 'Cool', sans-serif;
 }
 
 .sub-body-text {
-  font-size: 31px;
-  line-height: 50px;
+  font-size: 1.75rem;
+  line-height: 1.75rem;
   font-family: $cool;
+
+  @media screen and (min-width: 40rem) {
+    font-size: 2rem;
+    line-height: 3.125rem;
+  }
+
 }

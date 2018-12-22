@@ -1,0 +1,90 @@
+/*
+Spacing
+*/
+@function spacing($units) {
+  @return $units * 0.25rem;
+}
+
+$spacer: (
+  '0': spacing(0),
+  'xs': spacing(1),
+  's': spacing(2),
+  'm': spacing(4),
+  'l': spacing(8),
+  'xl': spacing(16),
+);
+
+@function spacer($spacing-name) {
+  @return map-get($spacer, $spacing-name);
+}
+
+/*
+Border Radius
+*/
+$radius: (
+  '0': spacing(0),
+  'xs': spacing(1),
+  's': spacing(2),
+  'm': spacing(4),
+  'l': spacing(8),
+  'circle': 50%,
+);
+
+@function radius($radius-name) {
+  @return map-get($radius, $radius-name);
+}
+
+/*
+ Border Sizes
+*/
+$width: (
+  'small': spacing(0.1875),
+  'medium': spacing(0.75),
+  'large': spacing(1.5),
+  'xlarge': spacing(2.5),
+);
+
+@each $name, $size in $width {
+  .border-#{$name} {
+    border-style: solid;
+    border-width: #{$size};
+  }
+  .border-right-#{$name} {
+    border-right-style: solid;
+    border-right-width: #{$size};
+  }
+  .border-top-#{$name} {
+    border-top-style: solid;
+    border-top-width: #{$size};
+  }
+  .border-bottom-#{$name} {
+    border-bottom-style: solid;
+    border-bottom-width: #{$size};
+  }
+  .border-left-#{$name} {
+    border-left-style: solid;
+    border-left-width: #{$size};
+  }
+}
+
+// /*
+// Global element shapes
+// */
+// $viewport-height: 100vh;
+//
+// $header-height-desktop: 130px;
+// $header-height-mobile: 90px;
+// $footer-height-desktop: 370px;
+// $footer-height-mobile: 420px;
+// /*
+// Container
+// */
+//
+// $container-max-width: 90rem;
+//
+// .container {
+//   @extend .mx-auto;
+//   max-width: $container-max-width;
+// }
+//
+// $flash-height: 60px;
