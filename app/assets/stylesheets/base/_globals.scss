@@ -6,3 +6,21 @@ Manual Resets
 *:focus {
   outline-color: color('light-gray');
 }
+
+.FormMessage {
+  opacity: 0;
+  transform: translateY(-200%);
+  transition: opacity 0.4s ease-out, transform 0.1s ease-out;
+
+  &--idle {
+    padding-top: 1.5rem;
+    color: color('black');
+    opacity: 1;
+    transform: translateY(0%);
+    transition: opacity 0.4s ease-in, transform 0.1s ease-in;
+  }
+
+  &--error {
+    color: color('red');
+  }
+}

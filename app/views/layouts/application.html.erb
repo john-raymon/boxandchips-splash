@@ -11,9 +11,17 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="flex clearfix px2">
+  <body class="flex clearfix px2" id="root">
     <section class="col col-12 max-width-1075 mxauto">
       <%= render 'shared/nav' %>
+
+      <% if !flash.empty? %>
+          <% flash.each do |key, value| -%>
+          <div id="flash" class="Flash__<%= key %> fixed t0 l0 text-center w100 z-flash py_25">
+            <p class="medium color-white"><%=h value %></p>
+          </div>
+          <% end %>
+      <% end %>
 
       <%= yield %>
     <section>

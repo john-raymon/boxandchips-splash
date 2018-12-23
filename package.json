@@ -3,9 +3,12 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^3.5.5",
+    "axios": "^0.18.0",
+    "basement": "https://github.com/sanctuarycomputer/basement.git",
     "basscss": "^8.0.10",
+    "email-validator": "^2.0.4",
+    "jquery": "^3.3.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10",
-    "basement": "https://github.com/sanctuarycomputer/basement.git"
+    "webpack-dev-server": "^3.1.10"
   }
 }

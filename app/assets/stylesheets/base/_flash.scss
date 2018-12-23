@@ -1,0 +1,14 @@
+.Flash {
+  pointer-events: none;
+
+  &__notice {
+    @extend .Flash;
+    background-color: color('yellow');
+  }
+
+  &__error,
+  &__alert {
+    @extend .Flash;
+    background-color: color('red');
+  }
+}

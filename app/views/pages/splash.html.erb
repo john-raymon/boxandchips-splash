@@ -39,25 +39,32 @@
         <%= render 'shared/svgs/box' %>
       </div>
     </div>
-    <div class="self-center none lg:flex">
-      <p class="Splash__second-hero__text flex large-body-text color-black-wash text-right">
+    <div class="self-center none lg:flex lg:flex-col">
+      <p class="Splash__second-hero__text large-body-text color-black-wash text-right">
         start monthly or get<br>a one-time box
       </p>
+      <span class="block medium color-yellow sm:mt0 text-right">
+          we're giving away an annual Subscription on March 7th 2019
+          <br />
+          subscribe below by January 31st 2019 for a chance to win
+      </span>
     </div>
   </div>
 
-  <div class="Splash__sign-up lg:py6">
+  <div class="Splash__sign-up lg:py6" data-subscribe-form-container>
     <p class="large-body-text mx-auto text-center color-black-wash">
-      We're starting soon
-      <span class="block sub-body-text color-yellow mt_5 sm:mt0">
-        be one of the first to know
+      We're starting something new
+      <span class="block sub-body-text color-yellow mt_5 sm:mt0 col-12 md:col-6 mxauto">
+        be first to know
       </span>
-      <form action="" method="post" class="flex flex-col">
+      <form class="flex flex-col" data-subscribe-form>
+        <div class="FormMessage caption mxauto text-center" data-form-message>
+        </div>
         <input type="email" name='email' class="col-11 md:col-5 mxauto border-bottom-medium border-black-wash sub-body-text text-black-gray text-center mt3" placeholder="what's your email address ?" />
         <p class="col-11 md:col-4 caption color-light-gray text-center mxauto pt_5 pb2">
-          We're giving away an Annual Subscription on March 7th 2019, subscribe by January 31st 2019 for a chance to win!
+          We promise not to send you spam; not to share nor sell your information.
         </p>
-        <button type="submit" name="button" class="Splash__subscribe-button pointer mxauto background-none border border-medium py_5 px4 border-yellow flex flex-row items-center justify-center">
+        <button data-form-submit type="submit" name="button" class="Splash__subscribe-button pointer mxauto background-none border border-medium py_5 px4 border-yellow flex flex-row items-center justify-center">
           <p class="sub-body-text color-yellow mr_5">
             notify me
           </p>
@@ -68,5 +75,14 @@
       </form>
 
     <p>
+  </div>
+
+  <div class="Splash__thank-you-container py4 lg:py6 none" data-subscribe-thank-you-container>
+    <p class="large-body-text mx-auto text-center color-black-wash">
+      Thank you for joining the club!
+      <span class="block sub-body-text color-yellow mt_5 sm:mt0 col-12 md:col-6 mxauto">
+        we're excited to send you unique, brands of chips you may have never heard of before.
+      </span>
+    </p>
   </div>
 </div>
