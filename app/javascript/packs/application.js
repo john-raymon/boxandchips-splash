@@ -76,7 +76,7 @@ class App {
           data: {email}
         })
         .catch((error) => {
-          console.log(error.message);
+          console.log('There was an error that was caught when making the request', error);
           this.putFormMessage(this.subscribeForm, 'Please include your email', true)
         });
 
