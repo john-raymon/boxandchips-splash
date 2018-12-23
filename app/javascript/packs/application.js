@@ -75,7 +75,7 @@ class App {
           dataType: 'script',
           data: {email}
         })
-        .catch(function (error) {
+        .catch((error) => {
           console.log(error.message);
           this.putFormMessage(this.subscribeForm, 'Please include your email', true)
         });
