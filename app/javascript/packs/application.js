@@ -78,7 +78,6 @@ class App {
         .catch(function (error) {
           console.log(error.message);
           this.putFormMessage(this.subscribeForm, 'Please include your email', true)
-
         });
 
       } else {
