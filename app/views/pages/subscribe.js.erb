@@ -26,13 +26,6 @@ end
     end
   else
     %>
-    window.ga('splashTracker.send', {
-      hitType: 'event',
-      eventCategory: 'Launch Subscribers',
-      eventAction: 'Subscribed',
-      eventLabel: 'Collecting emails for launch',
-      nonInteraction: true
-    });
     window.app.handleSubscribeSuccess()
      // window.app.putFormMessage(window.app.subscribeForm, 'We look forward to keeping you up to date!')
  <%

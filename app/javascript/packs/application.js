@@ -77,6 +77,14 @@ class App {
   }
 
   handleSubscribeSuccess(){
+    window.ga('splashTracker.send', {
+      hitType: 'event',
+      eventCategory: 'Splash Subscription Form',
+      eventAction: 'Subscribed',
+      eventLabel: 'Splash Subscribers',
+      nonInteraction: true
+    });
+    
     this.subscribeFormContainer.classList.add('Splash--success');
     this.subscribeThankYouContainer.classList.add('Splash__thank-you-container--initialize');
   }
