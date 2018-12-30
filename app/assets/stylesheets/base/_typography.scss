@@ -14,10 +14,10 @@
 $cool: 'Cool', sans-serif;
 
 .large-body-text {
-  font-family: $cool;
-  font-size: 2.75rem;
-  letter-spacing: 1.1px;
-  line-height: 2.65rem;
+  font-family: "Cool", sans-serif;
+  font-size: 3rem;
+  letter-spacing: 1px;
+  line-height: 48px;
 
   @media screen and (min-width: 40rem) {
     font-size: 3.75rem;
@@ -57,5 +57,11 @@ $cool: 'Cool', sans-serif;
     font-size: 2rem;
     line-height: 3.125rem;
   }
+}
 
+.nav-text {
+  font-size: 0.75rem;
+  line-height: 1.18rem;
+  letter-spacing: 0.28625rem;
+  font-family: $cool;
 }
