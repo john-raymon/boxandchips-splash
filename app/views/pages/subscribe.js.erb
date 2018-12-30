@@ -11,13 +11,29 @@ end
 
 <% if @e
     if @e.title == 'Member Exists'
-      %> window.app.putFormMessage(window.app.subscribeForm, 'Looks like your email already exist in our records', true) <%
+      %>
+      window.ga('splashTracker.send', {
+        hitType: 'event',
+        eventCategory: 'Existing Launch Subscriber',
+        eventAction: 'Subscribed Already',
+        eventLabel: 'Collecting emails for launch',
+        nonInteraction: true
+      });
+      window.app.putFormMessage(window.app.subscribeForm, 'Looks like your email already exist in our records', true) <%
     else
       %> window.app.putFormMessage(window.app.subscribeForm, 'Sorry! There seems to be an issue with our system. Please try again later.', true)
  <%
     end
   else
-    %> window.app.handleSubscribeSuccess()
+    %>
+    window.ga('splashTracker.send', {
+      hitType: 'event',
+      eventCategory: 'Launch Subscribers',
+      eventAction: 'Subscribed',
+      eventLabel: 'Collecting emails for launch',
+      nonInteraction: true
+    });
+    window.app.handleSubscribeSuccess()
      // window.app.putFormMessage(window.app.subscribeForm, 'We look forward to keeping you up to date!')
  <%
   end
