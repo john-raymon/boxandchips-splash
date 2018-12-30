@@ -43,6 +43,10 @@ class App {
   }
 
   _bindEvents() {
+    if ('ontouchstart' in window) {
+      this.app.classList.add('pointer');
+    } // fix ios click/touch issue https://stackoverflow.com/a/16006333/8320709
+
     this.app.addEventListener("click", (e) => {
       window.ga('splashTracker.send', {
         hitType: 'event',
@@ -84,7 +88,7 @@ class App {
       eventLabel: 'Splash Subscribers',
       nonInteraction: true
     });
-    
+
     this.subscribeFormContainer.classList.add('Splash--success');
     this.subscribeThankYouContainer.classList.add('Splash__thank-you-container--initialize');
   }
