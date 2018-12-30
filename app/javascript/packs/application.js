@@ -30,7 +30,8 @@ class App {
     formMessage: '[data-form-message]',
     formButton: '[data-form-submit]',
     subscribeFormContainer: '[data-subscribe-form-container]',
-    subscribeThankYouContainer: '[data-subscribe-thank-you-container]'
+    subscribeThankYouContainer: '[data-subscribe-thank-you-container]',
+    subscribeEmailField: '[data-subscribe-email-field]'
   }
 
   _init() {
@@ -38,11 +39,22 @@ class App {
     this.formButton = this.subscribeForm.querySelector(this.selectors.formButton);
     this.subscribeFormContainer = this.app.querySelector(this.selectors.subscribeFormContainer);
     this.subscribeThankYouContainer = this.app.querySelector(this.selectors.subscribeThankYouContainer);
-    console.log('this is the form', this.subscribeForm)
+    this.subscribeEmailField = this.app.querySelector(this.selectors.subscribeEmailField);
+    // console.log('this is the form', this.subscribeForm)
   }
 
   _bindEvents() {
     this.formButton.addEventListener('click', (e) => this.handleSubscribeFormSubmit(e))
+
+    this.subscribeEmailField.addEventListener('click', (e) => {
+      alert('test');
+      window.ga('splashTracker.send', {
+        hitType: 'event',
+        eventCategory: 'Subscribe Email Field',
+        eventAction: 'Focus',
+        eventLabel: 'Splash Campaign'
+      });
+    })
   }
 
   putFormMessage(form, message, error = false) {
