@@ -40,14 +40,21 @@ class App {
     this.subscribeFormContainer = this.app.querySelector(this.selectors.subscribeFormContainer);
     this.subscribeThankYouContainer = this.app.querySelector(this.selectors.subscribeThankYouContainer);
     this.subscribeEmailField = this.app.querySelector(this.selectors.subscribeEmailField);
-    // console.log('this is the form', this.subscribeForm)
   }
 
   _bindEvents() {
-    this.formButton.addEventListener('click', (e) => this.handleSubscribeFormSubmit(e))
+    this.app.addEventListener("click", (e) => {
+      window.ga('splashTracker.send', {
+        hitType: 'event',
+        eventCategory: e.target.id + '',
+        eventAction: 'Click',
+        eventLabel: 'Generic Click on Page'
+      });
+    })
+
+    this.subscribeForm.addEventListener('submit', (e) => this.handleSubscribeFormSubmit(e));
 
     this.subscribeEmailField.addEventListener('click', (e) => {
-      alert('test');
       window.ga('splashTracker.send', {
         hitType: 'event',
         eventCategory: 'Subscribe Email Field',
@@ -88,8 +95,7 @@ class App {
           data: {email}
         })
         .catch((error) => {
-          console.log('There was an error that was caught when making the request', error);
-          this.putFormMessage(this.subscribeForm, 'Please include your email', true)
+          this.putFormMessage(this.subscribeForm, 'There was an error that was caught when making the request', true)
         });
 
       } else {
