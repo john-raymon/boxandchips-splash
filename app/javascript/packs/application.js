@@ -48,19 +48,33 @@ class App {
     } // fix ios click/touch issue https://stackoverflow.com/a/16006333/8320709
 
     this.app.addEventListener("click", (e) => {
-      window.ga('splashTracker.send', {
-        hitType: 'event',
-        eventCategory: e.target.id + '',
-        eventAction: 'Click',
-        eventLabel: 'Generic Click on Page'
-      });
+      // window.ga('splashTracker.send', {
+      //   hitType: 'event',
+      //   eventCategory: e.target.id + '',
+      //   eventAction: 'Click',
+      //   eventLabel: 'Generic Click on Page'
+      // });
+
+      window.dataLayer.push({
+          event:'genericClick',
+          eventCategory: e.target.id + '',
+          eventAction: 'Click',
+          eventLabel: 'Generic Click on Splash-Page'
+       });
     })
 
     this.subscribeForm.addEventListener('submit', (e) => this.handleSubscribeFormSubmit(e));
 
     this.subscribeEmailField.addEventListener('click', (e) => {
-      window.ga('splashTracker.send', {
-        hitType: 'event',
+      // window.ga('splashTracker.send', {
+      //   hitType: 'event',
+      //   eventCategory: 'Subscribe Email Field',
+      //   eventAction: 'Focus',
+      //   eventLabel: 'Splash Campaign'
+      // });
+
+      window.dataLayer.push({
+        event: 'subscribe_email_field_focus',
         eventCategory: 'Subscribe Email Field',
         eventAction: 'Focus',
         eventLabel: 'Splash Campaign'
