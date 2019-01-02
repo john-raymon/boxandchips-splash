@@ -56,16 +56,18 @@ class App {
       // });
 
       window.dataLayer.push({
-          event:'genericClick',
-          eventCategory: e.target.id + '',
-          eventAction: 'Click',
-          eventLabel: 'Generic Click on Splash-Page'
+          'event':'genericClick',
+          'eventCategory': e.target.id + '',
+          'eventAction': 'Click',
+          'eventLabel': 'Generic Click on Splash-Page'
        });
     })
 
     this.subscribeForm.addEventListener('submit', (e) => this.handleSubscribeFormSubmit(e));
 
-    this.subscribeEmailField.addEventListener('click', (e) => {
+    this.subscribeEmailField.addEventListener('focus', (e) => {
+
+      console.log('focused into sub. field')
       // window.ga('splashTracker.send', {
       //   hitType: 'event',
       //   eventCategory: 'Subscribe Email Field',
@@ -74,10 +76,10 @@ class App {
       // });
 
       window.dataLayer.push({
-        event: 'subscribe_email_field_focus',
-        eventCategory: 'Subscribe Email Field',
-        eventAction: 'Focus',
-        eventLabel: 'Splash Campaign'
+        'event': 'subscribe_email_field_focus',
+        'eventCategory': 'Subscribe Email Field',
+        'eventAction': 'Focus',
+        'eventLabel': 'Splash Campaign'
       });
     })
   }
