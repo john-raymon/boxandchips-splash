@@ -35,6 +35,7 @@ class App {
   }
 
   _init() {
+    window.dataLayer = window.dataLayer || []
     this.subscribeForm = this.app.querySelector(this.selectors.subscribeForm);
     this.formButton = this.subscribeForm.querySelector(this.selectors.formButton);
     this.subscribeFormContainer = this.app.querySelector(this.selectors.subscribeFormContainer);
@@ -54,10 +55,10 @@ class App {
       //   eventAction: 'Click',
       //   eventLabel: 'Generic Click on Page'
       // });
-
+      
       window.dataLayer.push({
           'event':'genericClick',
-          'eventCategory': e.target.id + '',
+          'eventCategory': e.target.id === undefined ? e.target.type : e.target.id,
           'eventAction': 'Click',
           'eventLabel': 'Generic Click on Splash-Page'
        });
