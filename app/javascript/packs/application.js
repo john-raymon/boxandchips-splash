@@ -55,13 +55,16 @@ class App {
       //   eventAction: 'Click',
       //   eventLabel: 'Generic Click on Page'
       // });
-      
-      window.dataLayer.push({
-          'event':'genericClick',
-          'eventCategory': e.target.id === undefined ? e.target.type : e.target.id,
-          'eventAction': 'Click',
-          'eventLabel': 'Generic Click on Splash-Page'
-       });
+
+      const isInternal = !!(document.cookie.match(/^(?:.*;)?\s*InternalTraffic\s*=\s*([^;]+)(?:.*)?$/)||[,null])[1];
+      if (isInternal === "null") {
+        window.dataLayer.push({
+            'event':'genericClick',
+            'eventCategory': e.target.id === undefined ? e.target.type : e.target.id,
+            'eventAction': 'Click',
+            'eventLabel': 'Generic Click on Splash-Page'
+         });
+      }
     })
 
     this.subscribeForm.addEventListener('submit', (e) => this.handleSubscribeFormSubmit(e));
@@ -76,12 +79,15 @@ class App {
       //   eventLabel: 'Splash Campaign'
       // });
 
-      window.dataLayer.push({
-        'event': 'subscribe_email_field_focus',
-        'eventCategory': 'Subscribe Email Field',
-        'eventAction': 'Focus',
-        'eventLabel': 'Splash Campaign'
-      });
+      const isInternal = !!(document.cookie.match(/^(?:.*;)?\s*InternalTraffic\s*=\s*([^;]+)(?:.*)?$/)||[,null])[1];
+      if (isInternal === "null") {
+        window.dataLayer.push({
+          'event': 'subscribe_email_field_focus',
+          'eventCategory': 'Subscribe Email Field',
+          'eventAction': 'Focus',
+          'eventLabel': 'Splash Campaign'
+        });
+      }
     })
   }
 
