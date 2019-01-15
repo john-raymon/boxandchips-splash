@@ -57,7 +57,7 @@ class App {
       // });
 
       const isInternal = !!(document.cookie.match(/^(?:.*;)?\s*InternalTraffic\s*=\s*([^;]+)(?:.*)?$/)||[,null])[1];
-      if (isInternal === null) {
+      if (!isInternal) {
         window.dataLayer.push({
             'event':'genericClick',
             'eventCategory': e.target.id === undefined ? e.target.type : e.target.id,
@@ -80,7 +80,7 @@ class App {
       // });
 
       const isInternal = !!(document.cookie.match(/^(?:.*;)?\s*InternalTraffic\s*=\s*([^;]+)(?:.*)?$/)||[,null])[1];
-      if (isInternal === null) {
+      if (!isInternal) {
         window.dataLayer.push({
           'event': 'subscribe_email_field_focus',
           'eventCategory': 'Subscribe Email Field',
